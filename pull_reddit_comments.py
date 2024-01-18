@@ -10,9 +10,6 @@ reddit = praw.Reddit('NLPTesting')
 
 subreddit = reddit.subreddit('russian')
 
-all_comments = []
-
-
 
 for submission in subreddit.top(limit = 10):
     submission.comments.replace_more(limit=None)
