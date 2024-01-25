@@ -7,4 +7,4 @@ For the past five years, I have been teaching myself Russian, and one educationa
 * By default, Praw does [not return](https://praw.readthedocs.io/en/stable/tutorials/comments.html) every single comment on a submission, but instead, includes a `MoreComments` futures object which will fetch more comments on demand. To force all comments to be loaded into memory, I called `submission.comments.replace_more` with the parameter `limit = None` before storing the entire comment list by calling `submission.comments.list`. 
 * `submission.comments.list` only returns the top level comments for the submission. However, I wanted to extract all comments, including replies. To do this, I used a breadth-first search to walk each `Comment` object and its replies by accessing the `Comment.replies` attribute
 
-In the end, I mangaged to extract 4193 comments.
+In the end, I mangaged to extract 4193 comments, formatted as a dataset called `r_russian_reddit_comments.jsonl`
